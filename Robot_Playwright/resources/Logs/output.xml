@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1.dev1 (Python 3.10.7 on win32)" generated="20230723 20:11:11.404" rpa="false" schemaversion="4">
+<suite id="s1" name="Serve-Rest-Front" source="C:\Users\tarso\OneDrive\Área de Trabalho\RobotFramework\Robot_Playwright\tests\serve-rest-front.robot">
+<test id="s1-t1" name="Desafio: Conferir se o novo usuário é mostrado na listagem de usuários" line="13">
+<kw name="Cadastrar novo usuário" library="serve-rest-front">
+<kw name="Abrir o navegador" library="serve-rest-front">
+<kw name="New Browser" library="Browser">
+<arg>browser=${BROWSER}</arg>
+<arg>headless=${HEADLESS}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20230723 20:11:14.361" level="INFO">{"browser": "chromium", "headless": true, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\tarso\\OneDrive\\\u00c1rea de Trabalho\\RobotFramework\\Robot_Playwright\\resources\\Logs\\browser\\traces\\1d8f96c4-f5ab-4507-98ca-99601b85dedb"}</msg>
+<msg timestamp="20230723 20:11:15.247" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":true,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\tarso\\OneDrive\\Área de Trabalho\\RobotFramework\\Robot_Playwright\\resources\\Logs\\browser\\traces\\1d8f96c4-f5ab-4507-98ca-99601b85dedb"}</msg>
+<status status="PASS" starttime="20230723 20:11:14.360" endtime="20230723 20:11:15.247"/>
+</kw>
+<kw name="Uuid 4" library="FakerLibrary">
+<var>${TRACE_NAME}</var>
+<doc>Generate a random UUID4 object and cast it to another type if specified using a callable ``cast_to``.</doc>
+<msg timestamp="20230723 20:11:15.249" level="INFO">${TRACE_NAME} = 5608d8bf-4e3d-457d-af51-11dd69dfb3cc</msg>
+<status status="PASS" starttime="20230723 20:11:15.248" endtime="20230723 20:11:15.249"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${NOW}</var>
+<arg>result_format=%d-%m-%Y_%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230723 20:11:15.251" level="INFO">${NOW} = 23-07-2023_201115</msg>
+<status status="PASS" starttime="20230723 20:11:15.249" endtime="20230723 20:11:15.251"/>
+</kw>
+<kw name="New Context" library="Browser">
+<arg>viewport={'width': 1200, 'height': 800}</arg>
+<arg>tracing=/evidencies/traces/${NOW}/${TRACE_NAME}.zip</arg>
+<arg>recordVideo={'dir':'/evidencies/${NOW}'}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<msg timestamp="20230723 20:11:15.262" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "hideRfBrowser": "",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "recordVideo": {
+    "dir": "C:\\evidencies\\23-07-2023_201115",
+    "size": {
+      "height": 800,
+      "width": 1200
+    }
+  },
+  "reducedMotion": "no-preference",
+  "tracing": "/evidencies/traces/23-07-2023_201115/5608d8bf-4e3d-457d-af51-11dd69dfb3cc.zip",
+  "viewport": {
+    "height": 800,
+    "width": 1200
+  }
+}</msg>
+<msg timestamp="20230723 20:11:15.293" level="INFO">Successfully created context and trace file will be saved to: C:\evidencies\traces\23-07-2023_201115\5608d8bf-4e3d-457d-af51-11dd69dfb3cc.zip</msg>
+<msg timestamp="20230723 20:11:15.293" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'hideRfBrowser': '', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'recordVideo': {'dir': 'C:\\evidencies\\23-07-2023_201115', 'size': {'height': 800, 'width': 1200}}, 'reducedMotion': 'no-preference', 'tracing': '/evidencies/traces/23-07-2023_201115/5608d8bf-4e3d-457d-af51-11dd69dfb3cc.zip', 'viewport': {'height': 800, 'width': 1200}, 'trace': {'screenshots': True, 'snapshots': True}}</msg>
+<status status="PASS" starttime="20230723 20:11:15.251" endtime="20230723 20:11:15.293"/>
+</kw>
+<status status="PASS" starttime="20230723 20:11:14.359" endtime="20230723 20:11:15.295"/>
+</kw>
+<kw name="Ir para o site Serve Rest Front" library="serve-rest-front">
+<kw name="New Page" library="Browser">
+<arg>url=${SITE_SERVE_REST}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20230723 20:11:17.698" level="INFO">Successfully initialized new page object and opened url: https://front.serverest.dev/</msg>
+<msg timestamp="20230723 20:11:17.700" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;video width="1200" height="800" controls&gt;&lt;source src="../../../../../../../../evidencies/23-07-2023_201115/0c0c40a1ea759362751bdb144dc1d814.webm" type="video/"&gt;&lt;/video&gt;</msg>
+<status status="PASS" starttime="20230723 20:11:15.298" endtime="20230723 20:11:17.700"/>
+</kw>
+<kw name="Get Title" library="Browser">
+<var>${title}</var>
+<arg>==</arg>
+<arg>Front - ServeRest</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20230723 20:11:17.728" level="INFO">Title: 'Front - ServeRest'</msg>
+<msg timestamp="20230723 20:11:17.729" level="INFO">${title} = Front - ServeRest</msg>
+<status status="PASS" starttime="20230723 20:11:17.701" endtime="20230723 20:11:17.729"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${title}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230723 20:11:17.730" level="INFO">Front - ServeRest</msg>
+<status status="PASS" starttime="20230723 20:11:17.729" endtime="20230723 20:11:17.730"/>
+</kw>
+<status status="PASS" starttime="20230723 20:11:15.295" endtime="20230723 20:11:17.731"/>
+</kw>
+<kw name="Preencher os dados do novo usuário e cadastrar" library="serve-rest-front">
+<kw name="Click" library="Browser">
+<arg>css=a[data-testid='cadastrar']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230723 20:11:17.732" endtime="20230723 20:11:18.411"/>
+</kw>
+<kw name="Email" library="FakerLibrary">
+<var>${EMAIL}</var>
+<msg timestamp="20230723 20:11:18.413" level="INFO">${EMAIL} = wilsonjames@example.net</msg>
+<status status="PASS" starttime="20230723 20:11:18.411" endtime="20230723 20:11:18.413"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${EMAIL}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20230723 20:11:18.413" level="INFO">${EMAIL} = wilsonjames@example.net</msg>
+<status status="PASS" starttime="20230723 20:11:18.413" endtime="20230723 20:11:18.413"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[data-testid='nome']</arg>
+<arg>Mayara Fernandes</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20230723 20:11:18.416" level="INFO">Fills the text 'Mayara Fernandes' in the given field.</msg>
+<status status="PASS" starttime="20230723 20:11:18.415" endtime="20230723 20:11:18.686"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[data-testid='email']</arg>
+<arg>${EMAIL}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20230723 20:11:18.692" level="INFO">Fills the text 'wilsonjames@example.net' in the given field.</msg>
+<status status="PASS" starttime="20230723 20:11:18.689" endtime="20230723 20:11:18.882"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[data-testid='password']</arg>
+<arg>123456</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20230723 20:11:18.884" level="INFO">Fills the text '123456' in the given field.</msg>
+<status status="PASS" starttime="20230723 20:11:18.883" endtime="20230723 20:11:19.141"/>
+</kw>
+<kw name="Check Checkbox" library="Browser">
+<arg>css=input[data-testid='checkbox']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Checks the checkbox or selects radio button found by ``selector``.</doc>
+<status status="PASS" starttime="20230723 20:11:19.142" endtime="20230723 20:11:19.370"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>xpath=//*[@id="root"]//button &gt;&gt; text="Cadastrar"</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230723 20:11:19.371" endtime="20230723 20:11:19.670"/>
+</kw>
+<status status="PASS" starttime="20230723 20:11:17.731" endtime="20230723 20:11:19.671"/>
+</kw>
+<kw name="Conferir usuário cadastrado com sucesso" library="serve-rest-front">
+<kw name="Wait For Elements State" library="Browser">
+<arg>h1</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20230723 20:11:23.763" level="INFO">Waited for Element with selector h1 at state visible</msg>
+<status status="PASS" starttime="20230723 20:11:19.672" endtime="20230723 20:11:23.763"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>h1</arg>
+<arg>==</arg>
+<arg>Bem Vindo Mayara Fernandes</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230723 20:11:23.987" level="INFO">Text: 'Bem Vindo Mayara Fernandes'</msg>
+<status status="PASS" starttime="20230723 20:11:23.764" endtime="20230723 20:11:23.987"/>
+</kw>
+<kw name="Get Element States" library="Browser">
+<arg>css=button[data-testid='logout']</arg>
+<arg>validate</arg>
+<arg>value &amp; visible</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Get the active states from the element found by ``selector``.</doc>
+<msg timestamp="20230723 20:11:24.529" level="INFO">States are: ['attached', 'visible', 'enabled', 'editable', 'defocused']</msg>
+<status status="PASS" starttime="20230723 20:11:23.987" endtime="20230723 20:11:24.529"/>
+</kw>
+<status status="PASS" starttime="20230723 20:11:19.671" endtime="20230723 20:11:24.529"/>
+</kw>
+<status status="PASS" starttime="20230723 20:11:14.358" endtime="20230723 20:11:24.530"/>
+</kw>
+<kw name="Acessar a Lista de usuários" library="serve-rest-front">
+<kw name="Click" library="Browser">
+<arg>css=a[data-testid='listarUsuarios']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230723 20:11:24.553" endtime="20230723 20:11:25.093"/>
+</kw>
+<status status="PASS" starttime="20230723 20:11:24.550" endtime="20230723 20:11:25.095"/>
+</kw>
+<kw name="Conferir que o usuário a+arece na listagem" library="serve-rest-front">
+<kw name="Get Table Cell Element" library="Browser">
+<var>${elemento}</var>
+<arg>css=Table</arg>
+<arg>"Nome"</arg>
+<arg>"${EMAIL}"</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the Web Element that has the same column index and same row index as the selected elements.</doc>
+<msg timestamp="20230723 20:11:25.166" level="INFO">JavaScript executed successfully.</msg>
+<msg timestamp="20230723 20:11:25.458" level="INFO">Locator found successfully.</msg>
+<msg timestamp="20230723 20:11:25.458" level="INFO">${elemento} = css=Table &gt;&gt; tr &gt;&gt; nth=6 &gt;&gt; &gt; * &gt;&gt; nth=0</msg>
+<status status="PASS" starttime="20230723 20:11:25.113" endtime="20230723 20:11:25.458"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<var>${usuario_nome}</var>
+<arg>${elemento}</arg>
+<arg>==</arg>
+<arg>Mayara Fernandes</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230723 20:11:25.554" level="INFO">Text: 'Mayara Fernandes'</msg>
+<msg timestamp="20230723 20:11:25.555" level="INFO">${usuario_nome} = Mayara Fernandes</msg>
+<status status="PASS" starttime="20230723 20:11:25.458" endtime="20230723 20:11:25.555"/>
+</kw>
+<kw name="Highlight Elements" library="Browser">
+<arg>${elemento}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Adds a highlight to elements matched by the ``selector``. Provides a style adjustment.</doc>
+<msg timestamp="20230723 20:11:25.642" level="INFO">Highlighted 1 elements for 5000.</msg>
+<status status="PASS" starttime="20230723 20:11:25.555" endtime="20230723 20:11:25.642"/>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<arg>fullPage=${True}</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20230723 20:11:26.156" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230723 20:11:25.642" endtime="20230723 20:11:26.156"/>
+</kw>
+<status status="PASS" starttime="20230723 20:11:25.112" endtime="20230723 20:11:26.157"/>
+</kw>
+<tag>desafio</tag>
+<status status="PASS" starttime="20230723 20:11:14.343" endtime="20230723 20:11:26.262"/>
+</test>
+<status status="PASS" starttime="20230723 20:11:11.408" endtime="20230723 20:11:30.723"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">desafio</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Serve-Rest-Front">Serve-Rest-Front</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
